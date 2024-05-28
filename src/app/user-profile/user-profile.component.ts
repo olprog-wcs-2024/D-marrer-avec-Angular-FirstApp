@@ -19,12 +19,12 @@ export class UserProfileComponent {
     photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
   }
 
-  showMessage = false;
+  isVisibleMessage = false;
   showAge(){
-    if(this.showMessage==false){
-      this.showMessage = true;
+    if(this.isVisibleMessage==false){
+      this.isVisibleMessage = true;
   }else{
-    this.showMessage = false;
+    this.isVisibleMessage = false;
   }
   }
 
