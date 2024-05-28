@@ -5,4 +5,5 @@ import { UserProfile2Component } from './menu/user-profile2/user-profile2.compon
 export const routes: Routes = [
     {path:'sign-up', component: SignUpComponent},
     {path:'user-profile2', component: UserProfile2Component},
+    {path: '', component: UserProfile2Component},
 ];
