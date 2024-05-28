@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class UserProfileComponent {
 
+  title: string = 'Formulaire user profile';
+
   user = {
     name: 'Doe',
     firstName: 'John',
