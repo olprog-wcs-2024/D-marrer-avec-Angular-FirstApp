@@ -1,6 +1,6 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { first } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -17,6 +17,15 @@ export class UserProfileComponent {
     age : 25,
     quote: '',
     photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
+  }
+
+  showMessage = false;
+  showAge(){
+    if(this.showMessage==false){
+      this.showMessage = true;
+  }else{
+    this.showMessage = false;
+  }
   }
 
 }
