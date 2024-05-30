@@ -1,0 +1,106 @@
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+  <fieldset>
+    <label for="id-movie">Identifiant</label>
+    <input
+      id="id-movie"
+      name="id-movie"
+      type="text"
+      [(ngModel)]="newMovie.id"
+      #firstName="ngModel"
+      required
+      minlength="3"
+      maxlength="15"
+    />
+
+    <div *ngIf="id.errors && myForm.submitted">
+      <span *ngIf="id.errors?.['required']"
+        >Le champ identifiant est requis</span
+      >
+      <span *ngIf="id.errors?.['minlength']"
+        >La longueur minimale doit être supérieure à 3</span
+      >
+      <span *ngIf="id.errors?.['maxlength']"
+        >La longueur maximale doit être inférieure à 15</span
+      >
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="title-movie">Title</label>
+    <input
+      id="title-movie"
+      name="title-movie"
+      type="text"
+      [(ngModel)]="newMovie.title"
+      #lastName="ngModel"
+      required
+      minlength="3"
+      maxlength="15"
+    />
+
+    <div *ngIf="title.errors && myForm.submitted">
+      <span *ngIf="title.errors?.['required']">Le champ title est requis</span>
+      <span *ngIf="title.errors?.['minlength']"
+        >La longueur minimale doit être supérieure à 3</span
+      >
+      <span *ngIf="title.errors?.['maxlength']"
+        >La longueur maximale doit être inférieure à 15</span
+      >
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="type-movie">Type</label>
+    <input
+      id="type-movie"
+      name="type-movie"
+      [(ngModel)]="newMovie.type"
+      type="text"
+      #email="ngModel"
+      required
+    />
+
+    <div *ngIf="type.errors && myForm.submitted">
+      <span *ngIf="type.errors?.['required']">Le champ type est requis</span>
+      <span *ngIf="type.errors?.['email']">Le type est invalide</span>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="yearRelease-movie">Année de sortie</label>
+    <input
+      id="yearRelease-movie"
+      name="yearRelease-movie"
+      [(ngModel)]="newMovie.yearRelease"
+      #password="ngModel"
+      type="number"
+      required
+    />
+
+    <div *ngIf="yearRelease.errors && myForm.submitted">
+      <span *ngIf="yearRelease.errors?.['required']"
+        >Le champ année de sortie est requis</span
+      >
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="fiche-movie">Fiche</label>
+    <input
+      id="fiche-movie"
+      name="fiche-movie"
+      [(ngModel)]="newMovie.fiche"
+      type="text"
+      #email="ngModel"
+      required
+    />
+
+    <div *ngIf="fiche.errors && myForm.submitted">
+      <span *ngIf="fiche.errors?.['required']">Le champ fiche est requis</span>
+      <span *ngIf="fiche.errors?.['email']">Le type est invalide</span>
+    </div>
+  </fieldset>
+
+  <button type="reset">Restaurer</button>
+  <button type="submit">Sauvegarder</button>
+</form>

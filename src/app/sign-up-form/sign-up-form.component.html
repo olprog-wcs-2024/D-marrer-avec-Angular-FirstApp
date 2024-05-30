@@ -16,7 +16,7 @@
 
     <div *ngIf="firstName.errors && myForm.submitted">
       <span *ngIf="firstName.errors?.['required']"
-        >Le champ titre est requis</span
+        >Le champ first name est requis</span
       >
       <span *ngIf="firstName.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
@@ -42,7 +42,7 @@
 
     <div *ngIf="lastName.errors && myForm.submitted">
       <span *ngIf="lastName.errors?.['required']"
-        >Le champ titre est requis</span
+        >Le champ last name est requis</span
       >
       <span *ngIf="lastName.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
