@@ -1,26 +1,94 @@
-<p>sign-up-form works!</p>
 
-<form (ngSubmit) = "onSubmit()">
-    <fieldset>
-      <label for="title-order">Title</label>
-      <input id="title-order" name="title-order" type="text" [(ngModel)]="newOrder.title" required minlength="5">
-    </fieldset>
 
-    <fieldset>
-      <label for="quantity-order">Quantité</label>
-      <input id="quantity-order" name="quantity-order" [(ngModel)]="newOrder.quantity" type="number" required>
-    </fieldset>
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+  <fieldset>
+    <label for="first-name-order">First Name</label>
+    <input
+      id="first-name-order"
+      name="first-name-order"
+      type="text"
+      [(ngModel)]="newOrder.firstName"
+      #firstName="ngModel"
+      required
+      minlength="3"
+      maxlength="15"
+    />
 
-    <fieldset>
-      <label for="date-order">Date de commande</label>
-      <input id="date-order" name="date-order" [(ngModel)]="newOrder.date" type="date" required>
-    </fieldset>
+    <div *ngIf="firstName.errors && myForm.submitted">
+      <span *ngIf="firstName.errors?.['required']"
+        >Le champ titre est requis</span
+      >
+      <span *ngIf="firstName.errors?.['minlength']"
+        >La longueur minimale doit être supérieure à 3</span
+      >
+      <span *ngIf="firstName.errors?.['maxlength']"
+        >La longueur maximale doit être inférieure à 15</span
+      >
+    </div>
+  </fieldset>
 
-    <fieldset>
-      <label for="contact-order">Contact</label>
-      <input id="contact-order" name="contact-order" [(ngModel)]="newOrder.contact" type="email" required email>
-    </fieldset>
+  <fieldset>
+    <label for="last-name-order">Last Name</label>
+    <input
+      id="last-name-order"
+      name="last-name-order"
+      type="text"
+      [(ngModel)]="newOrder.lastName"
+      #lastName="ngModel"
+      required
+      minlength="3"
+      maxlength="15"
+    />
 
-    <button type="reset">Restaurer</button>
-    <button type="submit">Sauvegarder</button>
+    <div *ngIf="lastName.errors && myForm.submitted">
+      <span *ngIf="lastName.errors?.['required']"
+        >Le champ titre est requis</span
+      >
+      <span *ngIf="lastName.errors?.['minlength']"
+        >La longueur minimale doit être supérieure à 3</span
+      >
+      <span *ngIf="lastName.errors?.['maxlength']"
+        >La longueur maximale doit être inférieure à 15</span
+      >
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="email-order">Email</label>
+    <input
+      id="email-order"
+      name="email-order"
+      [(ngModel)]="newOrder.email"
+      type="email"
+      #email="ngModel"
+      required
+      email
+    />
+
+    <div *ngIf="email.errors && myForm.submitted">
+      <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
+      <span *ngIf="email.errors?.['email']">L'email est invalide</span>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <label for="password-order">Password</label>
+    <input
+      id="password-order"
+      name="password-order"
+      [(ngModel)]="newOrder.password"
+      #password="ngModel"
+      type="password"
+      required
+    />
+
+    <div *ngIf="password.errors && myForm.submitted">
+      <span *ngIf="password.errors?.['required']"
+        >Le champ password est requis</span
+      >
+    </div>
+  </fieldset>
+
+  <button type="reset">Restaurer</button>
+  <button type="submit">Sauvegarder</button>
 </form>

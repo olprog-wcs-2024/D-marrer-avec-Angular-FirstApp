@@ -1,6 +1,6 @@
 export interface Order {
-    title: string;
-    quantity: number;
-    date: Date;
-    contact: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
 }
