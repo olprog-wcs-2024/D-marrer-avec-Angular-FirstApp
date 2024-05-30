@@ -1,25 +1,29 @@
-<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+<form
+  (ngSubmit)="myForm.valid && onSubmit()"
+  [formGroup]="movieForm"
+  ]
+  #myForm="ngForm"
+>
   <fieldset>
     <label for="id-movie">Identifiant</label>
     <input
       id="id-movie"
       name="id-movie"
       type="text"
-      [(ngModel)]="newMovie.id"
-      #firstName="ngModel"
+      formControlName="id"
       required
       minlength="3"
       maxlength="15"
     />
 
-    <div *ngIf="id.errors && myForm.submitted">
-      <span *ngIf="id.errors?.['required']"
+    <div *ngIf="movieForm.controls.errors && myForm.submitted">
+      <span *ngIf="movieForm.controls.errors?.['required']"
         >Le champ identifiant est requis</span
       >
-      <span *ngIf="id.errors?.['minlength']"
+      <span *ngIf="movieForm.controls.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
       >
-      <span *ngIf="id.errors?.['maxlength']"
+      <span *ngIf="movieForm.controls.errors?.['maxlength']"
         >La longueur maximale doit être inférieure à 15</span
       >
     </div>
@@ -31,19 +35,20 @@
       id="title-movie"
       name="title-movie"
       type="text"
-      [(ngModel)]="newMovie.title"
-      #lastName="ngModel"
+      formControlName="title"
       required
       minlength="3"
       maxlength="15"
     />
 
-    <div *ngIf="title.errors && myForm.submitted">
-      <span *ngIf="title.errors?.['required']">Le champ title est requis</span>
-      <span *ngIf="title.errors?.['minlength']"
+    <div *ngIf="movieForm.controls.errors && myForm.submitted">
+      <span *ngIf="movieForm.controls.errors?.['required']"
+        >Le champ title est requis</span
+      >
+      <span *ngIf="movieForm.controls.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
       >
-      <span *ngIf="title.errors?.['maxlength']"
+      <span *ngIf="movieForm.controls.errors?.['maxlength']"
         >La longueur maximale doit être inférieure à 15</span
       >
     </div>
@@ -54,15 +59,18 @@
     <input
       id="type-movie"
       name="type-movie"
-      [(ngModel)]="newMovie.type"
       type="text"
-      #email="ngModel"
+      formControlName="type"
       required
     />
 
-    <div *ngIf="type.errors && myForm.submitted">
-      <span *ngIf="type.errors?.['required']">Le champ type est requis</span>
-      <span *ngIf="type.errors?.['email']">Le type est invalide</span>
+    <div *ngIf="movieForm.controls.errors && myForm.submitted">
+      <span *ngIf="movieForm.controls.errors?.['required']"
+        >Le champ type est requis</span
+      >
+      <span *ngIf="movieForm.controls.errors?.['email']"
+        >Le type est invalide</span
+      >
     </div>
   </fieldset>
 
@@ -71,14 +79,13 @@
     <input
       id="yearRelease-movie"
       name="yearRelease-movie"
-      [(ngModel)]="newMovie.yearRelease"
-      #password="ngModel"
       type="number"
+      formControlName="yearRelease"
       required
     />
 
-    <div *ngIf="yearRelease.errors && myForm.submitted">
-      <span *ngIf="yearRelease.errors?.['required']"
+    <div *ngIf="movieForm.controls.errors && myForm.submitted">
+      <span *ngIf="movieForm.controls.errors?.['required']"
         >Le champ année de sortie est requis</span
       >
     </div>
@@ -89,15 +96,18 @@
     <input
       id="fiche-movie"
       name="fiche-movie"
-      [(ngModel)]="newMovie.fiche"
       type="text"
-      #email="ngModel"
+      formControlName="fiche"
       required
     />
 
-    <div *ngIf="fiche.errors && myForm.submitted">
-      <span *ngIf="fiche.errors?.['required']">Le champ fiche est requis</span>
-      <span *ngIf="fiche.errors?.['email']">Le type est invalide</span>
+    <div *ngIf="movieForm.controls.errors && myForm.submitted">
+      <span *ngIf="movieForm.controls.errors?.['required']"
+        >Le champ fiche est requis</span
+      >
+      <span *ngIf="movieForm.controls.errors?.['email']"
+        >Le type est invalide</span
+      >
     </div>
   </fieldset>
 
