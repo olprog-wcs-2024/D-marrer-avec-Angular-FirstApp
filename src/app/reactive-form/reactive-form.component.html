@@ -1,29 +1,23 @@
-<form
-  (ngSubmit)="myForm.valid && onSubmit()"
-  [formGroup]="movieForm"
-  ]
-  #myForm="ngForm"
->
+<h1>REACTIVE FORM</h1>
+
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
   <fieldset>
     <label for="id-movie">Identifiant</label>
     <input
       id="id-movie"
-      name="id-movie"
-      type="text"
       formControlName="id"
       required
       minlength="3"
       maxlength="15"
     />
-
-    <div *ngIf="movieForm.controls.errors && myForm.submitted">
-      <span *ngIf="movieForm.controls.errors?.['required']"
+    <div *ngIf="movieForm.get('id')?.errors && movieForm.get('id')?.touched">
+      <span *ngIf="movieForm.get('id')?.errors?.['required']"
         >Le champ identifiant est requis</span
       >
-      <span *ngIf="movieForm.controls.errors?.['minlength']"
+      <span *ngIf="movieForm.get('id')?.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
       >
-      <span *ngIf="movieForm.controls.errors?.['maxlength']"
+      <span *ngIf="movieForm.get('id')?.errors?.['maxlength']"
         >La longueur maximale doit être inférieure à 15</span
       >
     </div>
@@ -33,22 +27,21 @@
     <label for="title-movie">Title</label>
     <input
       id="title-movie"
-      name="title-movie"
-      type="text"
       formControlName="title"
       required
       minlength="3"
       maxlength="15"
     />
-
-    <div *ngIf="movieForm.controls.errors && myForm.submitted">
-      <span *ngIf="movieForm.controls.errors?.['required']"
+    <div
+      *ngIf="movieForm.get('title')?.errors && movieForm.get('title')?.touched"
+    >
+      <span *ngIf="movieForm.get('title')?.errors?.['required']"
         >Le champ title est requis</span
       >
-      <span *ngIf="movieForm.controls.errors?.['minlength']"
+      <span *ngIf="movieForm.get('title')?.errors?.['minlength']"
         >La longueur minimale doit être supérieure à 3</span
       >
-      <span *ngIf="movieForm.controls.errors?.['maxlength']"
+      <span *ngIf="movieForm.get('title')?.errors?.['maxlength']"
         >La longueur maximale doit être inférieure à 15</span
       >
     </div>
@@ -56,20 +49,12 @@
 
   <fieldset>
     <label for="type-movie">Type</label>
-    <input
-      id="type-movie"
-      name="type-movie"
-      type="text"
-      formControlName="type"
-      required
-    />
-
-    <div *ngIf="movieForm.controls.errors && myForm.submitted">
-      <span *ngIf="movieForm.controls.errors?.['required']"
+    <input id="type-movie" formControlName="type" required />
+    <div
+      *ngIf="movieForm.get('type')?.errors && movieForm.get('type')?.touched"
+    >
+      <span *ngIf="movieForm.get('type')?.errors?.['required']"
         >Le champ type est requis</span
-      >
-      <span *ngIf="movieForm.controls.errors?.['email']"
-        >Le type est invalide</span
       >
     </div>
   </fieldset>
@@ -78,14 +63,17 @@
     <label for="yearRelease-movie">Année de sortie</label>
     <input
       id="yearRelease-movie"
-      name="yearRelease-movie"
       type="number"
       formControlName="yearRelease"
       required
     />
-
-    <div *ngIf="movieForm.controls.errors && myForm.submitted">
-      <span *ngIf="movieForm.controls.errors?.['required']"
+    <div
+      *ngIf="
+        movieForm.get('yearRelease')?.errors &&
+        movieForm.get('yearRelease')?.touched
+      "
+    >
+      <span *ngIf="movieForm.get('yearRelease')?.errors?.['required']"
         >Le champ année de sortie est requis</span
       >
     </div>
@@ -93,24 +81,16 @@
 
   <fieldset>
     <label for="fiche-movie">Fiche</label>
-    <input
-      id="fiche-movie"
-      name="fiche-movie"
-      type="text"
-      formControlName="fiche"
-      required
-    />
-
-    <div *ngIf="movieForm.controls.errors && myForm.submitted">
-      <span *ngIf="movieForm.controls.errors?.['required']"
+    <input id="fiche-movie" formControlName="fiche" required />
+    <div
+      *ngIf="movieForm.get('fiche')?.errors && movieForm.get('fiche')?.touched"
+    >
+      <span *ngIf="movieForm.get('fiche')?.errors?.['required']"
         >Le champ fiche est requis</span
-      >
-      <span *ngIf="movieForm.controls.errors?.['email']"
-        >Le type est invalide</span
       >
     </div>
   </fieldset>
 
   <button type="reset">Restaurer</button>
-  <button type="submit">Sauvegarder</button>
+  <button type="submit" [disabled]="movieForm.invalid">Sauvegarder</button>
 </form>
