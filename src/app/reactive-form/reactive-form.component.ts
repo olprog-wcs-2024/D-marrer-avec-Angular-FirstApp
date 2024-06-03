@@ -16,14 +16,19 @@ export class ReactiveFormComponent {
   movieForm = this.fb.group({
 
     // declare all controls with validation rules
-
-    id: ['', Validators.required],
-    title: ['', Validators.required],
-    type: ['', Validators.required],
+    details: this.fb.group({
+      id: ['', Validators.required],
+      title: ['', Validators.required]
+    }),
+    type: ['séries', Validators.required],
     yearRelease: ['', Validators.required],
     fiche: ['', Validators.required],
 
+
+    
   });
+
+  
 
   constructor(private fb: FormBuilder) {}
 
@@ -41,4 +46,6 @@ export class ReactiveFormComponent {
         console.log('orderForm value changes : ', value);
       });
   }
+
+  
 }
