@@ -1,3 +1,9 @@
-
-
-<app-skill [skill]="skill"></app-skill>
+<section>
+    <ul *ngFor="let item of developer1|keyvalue">
+      <li *ngIf="item.key !== 'skills'">{{ item.key }} : {{ item.value }}</li>
+    </ul>
+  
+    <app-skill *ngFor="let skill of developer1.skills" [skill]="skill">
+    </app-skill>
+  </section>
+  

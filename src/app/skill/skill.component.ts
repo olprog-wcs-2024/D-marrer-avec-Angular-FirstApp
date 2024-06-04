@@ -10,6 +10,5 @@ import { Skill } from '../models/skill.models';
 })
 export class SkillComponent {
 
-  
-
+  @Input() skill: Skill = { site: '', logo: '', name: '' }; 
 }

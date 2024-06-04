@@ -14,9 +14,9 @@ import { CommonModule } from '@angular/common';
 export class DeveloperComponent {
 
   skill1 = new Skill (
-    "HTML",
-    ' https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png',
-    ' https://en.wikipedia.org/wiki/HTML'
+    "JS",
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
+    'https://en.wikipedia.org/wiki/JavaScript'
   );
 
   skill2 = new Skill  (
