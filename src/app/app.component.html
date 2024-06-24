@@ -20,3 +20,11 @@
 <app-reactive-form></app-reactive-form>
 
 <app-developer></app-developer>
+
+<div >
+  <h1>Onomatopoeia List</h1>
+  <app-create-onomatopia (sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)"></app-create-onomatopia>
+  <ul>
+    <li *ngFor="let onomatopoeia of onomatopoeiaList.slice()">{{ onomatopoeia }}</li>
+  </ul>
+</div>
