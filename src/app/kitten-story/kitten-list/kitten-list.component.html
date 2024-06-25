@@ -1,1 +1,7 @@
-<p>kitten-list works!</p>
+<div *ngFor="let kitten of kittens; let i = index" class="kitten-card">
+    <img [src]="kitten.imageUrl" alt="{{kitten.name}}">
+    <h3>{{kitten.name}}</h3>
+    <p>Race: {{kitten.breed}}</p>
+    <p>Date de naissance: {{kitten.birthDate}}</p>
+    <button (click)="adoptKitten(i)">Adopter</button>
+  </div>
