@@ -47,3 +47,59 @@ top: 0;
     justify-content: space-between;
     height: 100vh;
 }
+
+
+/*
+
+kitten story
+*/
+
+/* src/app/app.component.css */
+
+/* src/app/app.component.css */
+.container-kitten {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.kitten-lists {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.kitten-list, .adopted-kitten-list {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  flex: 1;
+}
+
+.kitten-list h2, .adopted-kitten-list h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .kitten-lists {
+    flex-direction: column;
+  }
+  
+  .kitten-list, .adopted-kitten-list {
+    margin-top: 20px;
+  }
+}

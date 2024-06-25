@@ -1,3 +1,4 @@
+<h1>Quete 1</h1>
 <div class="container">
   <div class="top">
     <app-block class="block1"></app-block>
@@ -9,22 +10,47 @@
   </div>
 </div>
 
+<h1>Quete 2</h1>
 <app-user-profile></app-user-profile>
 
+<h1>Quete 3</h1>
 <app-user-admin></app-user-admin>
 
+<h1>Quete 4</h1>
 <app-menu></app-menu>
 
+<h1>Quete 5</h1>
 <app-sign-up-form></app-sign-up-form>
 
+<h1>Quete 6</h1>
 <app-reactive-form></app-reactive-form>
 
+<h1>Quete 7</h1>
 <app-developer></app-developer>
 
-<div >
-  <h1>Onomatopoeia List</h1>
-  <app-create-onomatopia (sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)"></app-create-onomatopia>
+<div>
+  <h1>Quete 8 - Onomatope List</h1>
+  <app-create-onomatopia
+    (sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)"
+  ></app-create-onomatopia>
   <ul>
-    <li *ngFor="let onomatopoeia of onomatopoeiaList.slice()">{{ onomatopoeia }}</li>
+    <li *ngFor="let onomatopoeia of onomatopoeiaList.slice()">
+      {{ onomatopoeia }}
+    </li>
   </ul>
+</div>
+
+<div class="container-kitten">
+  <h1>Quete 9 - Kitten Story</h1>
+  <app-kitten-form></app-kitten-form>
+  <div class="kitten-lists">
+    <div class="kitten-list">
+      <h2>Chatons disponibles</h2>
+      <app-kitten-list></app-kitten-list>
+    </div>
+    <div class="adopted-kitten-list">
+      <h2>Chatons adoptés</h2>
+      <app-kitten-adopted></app-kitten-adopted>
+    </div>
+  </div>
 </div>

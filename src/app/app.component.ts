@@ -9,13 +9,16 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { CreateOnomatopiaComponent } from "./create-onomatopia/create-onomatopia.component";
 import { CommonModule } from '@angular/common';
+import { KittenFormComponent } from './kitten-story/kitten-form/kitten-form.component';
+import { KittenListComponent } from './kitten-story/kitten-list/kitten-list.component';
+import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten-adopted.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent]
+    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent]
 })
 export class AppComponent {
   onomatopoeiaList: string[] = [];

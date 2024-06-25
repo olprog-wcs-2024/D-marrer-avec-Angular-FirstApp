@@ -1,0 +1,51 @@
+.kitten-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .kitten-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kitten-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .kitten-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0 5px;
+  }
+  
+  .kitten-card p {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .kitten-card button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+  }
+  
+  .kitten-card button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+  }
+  
