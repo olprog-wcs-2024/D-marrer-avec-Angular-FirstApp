@@ -1,1 +1,20 @@
-<p>kitten-form works!</p>
+<form (ngSubmit)="addKitten()" (input)="validateForm()">
+    <label>
+      Nom :
+      <input type="text" [(ngModel)]="name" name="name" required>
+    </label>
+    <label>
+      Race :
+      <input type="text" [(ngModel)]="breed" name="breed" required>
+    </label>
+    <label>
+      Date de naissance :
+      <input type="date" [(ngModel)]="birthDate" name="birthDate" required>
+    </label>
+    <label>
+      URL de l'image :
+      <input type="url" [(ngModel)]="imageUrl" name="imageUrl" required>
+    </label>
+    <button type="submit" [disabled]="!isValid" [ngClass]="{'valid': isValid}">Ajouter un chaton</button>
+  </form>
+  

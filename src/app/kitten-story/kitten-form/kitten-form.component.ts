@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { KittenService, Kitten } from '../../services/kitten.service';
+import { FormsModule } from '@angular/forms';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-kitten-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,NgClass],
   templateUrl: './kitten-form.component.html',
   styleUrl: './kitten-form.component.css'
 })
