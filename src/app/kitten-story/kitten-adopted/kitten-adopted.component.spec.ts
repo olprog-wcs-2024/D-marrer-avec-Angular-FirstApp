@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KittenAdoptedComponent } from './kitten-adopted.component';
+import { AdoptedKittenListComponent } from './kitten-adopted.component';
 
 describe('KittenAdoptedComponent', () => {
-  let component: KittenAdoptedComponent;
-  let fixture: ComponentFixture<KittenAdoptedComponent>;
+  let component: AdoptedKittenListComponent;
+  let fixture: ComponentFixture<AdoptedKittenListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [KittenAdoptedComponent]
+      imports: [AdoptedKittenListComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(KittenAdoptedComponent);
+    fixture = TestBed.createComponent(AdoptedKittenListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
