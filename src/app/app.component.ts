@@ -21,6 +21,9 @@ import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten
     imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent]
 })
 export class AppComponent {
+
+  title = 'D-marrer-avec-Angular-FirstApp';
+
   onomatopoeiaList: string[] = [];
 
   onReceiveNewOnomatopia(newOnomatopia: string) {
