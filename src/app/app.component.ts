@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { BlockComponent } from './block/block.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -13,6 +13,7 @@ import { KittenFormComponent } from './kitten-story/kitten-form/kitten-form.comp
 import { KittenListComponent } from './kitten-story/kitten-list/kitten-list.component';
 import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten-adopted.component';
 import { CocktailListComponent } from "./cocktail-list/cocktail-list.component";
+import { NasaService } from './services/nasa.service';
 
 @Component({
     selector: 'app-root',
@@ -32,4 +33,15 @@ export class AppComponent {
     this.onomatopoeiaList.push(newOnomatopia);
     console.log('Updated list:', this.onomatopoeiaList); // Vérifiez que la liste est mise à jour
   }
+
+  imgOfTheDay: string = '';
+
+  private nasaService = inject(NasaService);
+
+  ngOnInit(): void {
+    this.nasaService.getImageOfTheDay().subscribe((url: string) => {
+      this.imgOfTheDay = url;
+    });
+}
+
 }
