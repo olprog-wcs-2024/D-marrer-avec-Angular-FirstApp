@@ -18,6 +18,6 @@ export class CocktailService {
   constructor() { }
 
   getCocktails(): Observable<Cocktail[]> {
-    return this.http.get<Cocktail[]>('assets/cocktails.json');
+    return this.http.get<Cocktail[]>("/assets/cocktails.json");
   }
 }

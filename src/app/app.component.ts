@@ -12,13 +12,14 @@ import { CommonModule } from '@angular/common';
 import { KittenFormComponent } from './kitten-story/kitten-form/kitten-form.component';
 import { KittenListComponent } from './kitten-story/kitten-list/kitten-list.component';
 import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten-adopted.component';
+import { CocktailListComponent } from "./cocktail-list/cocktail-list.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent]
+    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent, CocktailListComponent]
 })
 export class AppComponent {
 

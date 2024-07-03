@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Sex on the beach",
+        "price": 10,
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.explicit.bing.net%2Fth%3Fid%3DOIP.tdjsKNGPOVZqX8l4lYHxzAHaLG%26pid%3DApi&f=1&ipt=724dd86fe85a99a51f1f91b0e8ae34de89049c6fa944d8611ce7c0f7785776d5&ipo=images"
+    },
+    {
+        "name": "Marguarita",
+        "price": 13,
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Vb7ax9nqWU-I0kiHAig6ZAHaLH%26pid%3DApi&f=1&ipt=7cf16566801ba701a1d5f8226a1219e167cef2e86578db283c9909144df1516c&ipo=images"
+    },
+    {
+        "name": "Martini",
+        "price": 8,
+        "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.P62P91e4Qps971FHiGelRgHaKs%26pid%3DApi&f=1&ipt=c766bacb36829f0c82f0d5cb27d100cb552d626fb38eebb8388302e88d4bdaf1&ipo=images"
+    }
+]

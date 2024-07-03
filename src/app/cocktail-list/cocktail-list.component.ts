@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Cocktail, CocktailService } from '../services/cocktail.service';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 
 
 @Component({
   selector: 'app-cocktail-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, CommonModule],
   templateUrl: './cocktail-list.component.html',
   styleUrl: './cocktail-list.component.css'
 })
 export class CocktailListComponent {
 
-  cocktailsList : Cocktail [];
+  cocktailsList : Cocktail [] = [];
   
 
-  constructor(private cocktailService: CocktailService) {
-    this.cocktailsList = this.cocktailService.getCocktails();
-  }
+  private cocktailService = inject(CocktailService);
 
-  getCocktails() {
-    return this.cocktailsList;
-  }
+  ngOnInit(): void {
+    this.cocktailService.getCocktails().subscribe(cocktailsFromJsonFile => {
+      this.cocktailsList = cocktailsFromJsonFile;
+    });
+}
+
 }
