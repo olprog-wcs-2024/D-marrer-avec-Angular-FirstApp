@@ -1,0 +1,51 @@
+/* Styles pour le conteneur de la liste des cocktails */
+.cocktail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  /* Styles pour chaque élément de cocktail */
+  .cocktail-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .cocktail-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles pour l'image du cocktail */
+  .cocktail-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  /* Styles pour le contenu du cocktail */
+  .cocktail-content {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .cocktail-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .cocktail-price {
+    font-size: 1em;
+    color: #666;
+  }
+  
