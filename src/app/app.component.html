@@ -58,8 +58,18 @@
 <h1>Quete 11</h1>
 <app-cocktail-list></app-cocktail-list>
 
-<h1>Quete 12</h1>
-<div>
-  <h1>NASA Image of the Day</h1>
-  <img *ngIf="imgOfTheDay" [src]="imgOfTheDay" alt="NASA Image of the Day" />
+
+<div class="nasa-image-container">
+  <h1>Quete 12</h1>
+
+  <div class="nasa-image">
+    <img *ngIf="objectOfTheDay" [src]="objectOfTheDay.url" alt="{{ objectOfTheDay.title }}">
+  </div>
+
+  <div class="nasa-details" *ngIf="objectOfTheDay">
+    <h2 class="nasa-details-title">{{ objectOfTheDay.title }}</h2>
+    <p><strong>Copyright:</strong> {{ objectOfTheDay.copyright }}</p>
+    <p><strong>Date:</strong> {{ objectOfTheDay.date }}</p>
+    <p class="nasa-details-text">{{ objectOfTheDay.explanation }}</p>
+  </div>
 </div>

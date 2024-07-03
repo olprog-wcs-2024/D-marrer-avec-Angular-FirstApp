@@ -13,7 +13,7 @@ import { KittenFormComponent } from './kitten-story/kitten-form/kitten-form.comp
 import { KittenListComponent } from './kitten-story/kitten-list/kitten-list.component';
 import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten-adopted.component';
 import { CocktailListComponent } from "./cocktail-list/cocktail-list.component";
-import { NasaService } from './services/nasa.service';
+import { NasaService, ObjectfromNasa } from './services/nasa.service';
 
 @Component({
     selector: 'app-root',
@@ -34,14 +34,16 @@ export class AppComponent {
     console.log('Updated list:', this.onomatopoeiaList); // Vérifiez que la liste est mise à jour
   }
 
-  imgOfTheDay: string = '';
+  objectOfTheDay?: ObjectfromNasa;
 
   private nasaService = inject(NasaService);
 
   ngOnInit(): void {
-    this.nasaService.getImageOfTheDay().subscribe((url: string) => {
-      this.imgOfTheDay = url;
+    this.nasaService.getImageOfTheDay().subscribe(data => {
+      this.objectOfTheDay = data;
     });
-}
+  }
+  
+
 
 }
