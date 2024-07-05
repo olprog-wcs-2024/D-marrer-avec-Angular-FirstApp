@@ -1,21 +1,34 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { User } from '../models/userTemplateForm.models';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-user-template-form-quete14',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './user-template-form-quete14.component.html',
-  styleUrl: './user-template-form-quete14.component.css'
+  styleUrls: ['./user-template-form-quete14.component.css']
 })
 export class UserTemplateFormQuete14Component {
 
-  userName = new FormControl('');
-  userMail = new FormControl('');
-  userPassword = new FormControl('');
-  userAdress = new FormControl({
-    city: '',
-    street: '',
-    codePosal: ''
+  inscriptionForm = new FormGroup({
+    userName: new FormControl('', Validators.required),
+    userMail: new FormControl('', [Validators.required, Validators.email]),
+    userPassword: new FormControl('', Validators.required),
+    userAddress: new FormGroup({
+      street: new FormControl('', Validators.required),
+      postalCode: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required)
+    })
   });
+
+  newUser!: User;
+
+  onSubmit() {
+    if (this.inscriptionForm.valid) {
+      this.newUser = this.inscriptionForm.value as User;
+      console.log('New User:', this.newUser);
+    }
+  }
 }

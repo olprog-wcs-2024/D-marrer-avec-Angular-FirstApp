@@ -14,13 +14,14 @@ import { KittenListComponent } from './kitten-story/kitten-list/kitten-list.comp
 import { AdoptedKittenListComponent } from './kitten-story/kitten-adopted/kitten-adopted.component';
 import { CocktailListComponent } from "./cocktail-list/cocktail-list.component";
 import { NasaService, ObjectfromNasa } from './services/nasa.service';
+import { UserTemplateFormQuete14Component } from './user-template-form-quete14/user-template-form-quete14.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent, CocktailListComponent]
+    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent, CocktailListComponent, UserTemplateFormQuete14Component]
 })
 export class AppComponent {
 
