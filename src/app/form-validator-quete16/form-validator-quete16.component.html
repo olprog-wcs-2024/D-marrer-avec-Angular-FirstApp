@@ -10,6 +10,11 @@
         <label>
           Email:
           <input type="email" formControlName="userMail" />
+          <div *ngIf="userForm.get('credentials.userMail')?.invalid && userForm.get('credentials.userMail')?.touched">
+            <small *ngIf="userForm.get('credentials.userMail')?.errors?.['required']">Email is required.</small>
+            <small *ngIf="userForm.get('credentials.userMail')?.errors?.['email']">Email is not valid.</small>
+            <small *ngIf="userForm.get('credentials.userMail')?.errors?.['emailValidator()']">Email must end with wilder.school</small>
+          </div>
         </label>
   
         <label>
