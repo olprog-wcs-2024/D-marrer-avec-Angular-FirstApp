@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../models/userTemplateForm.models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-reactive-form-quete15',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './user-reactive-form-quete15.component.html',
   styleUrl: './user-reactive-form-quete15.component.css'
 })
