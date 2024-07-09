@@ -4,11 +4,16 @@ export interface Adress{
     street : string;
     postalCode : string;
   }
+
+  export interface credentials{
+
+    userMail : string;
+    userPassword : string;
+  }
   
    export interface User {
   
       userName : string;
-      userMail : string;
-      userPassword : string;
+      userLog : credentials;
       userAddress : Adress;
     }

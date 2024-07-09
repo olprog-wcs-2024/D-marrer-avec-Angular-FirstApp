@@ -1,11 +1,10 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors} from '@angular/forms';
 
-export function emailValidator():ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-        const email = control.value;
-        if (email && !email.endsWith('@wilder.school')) {
-          return { wilderSchoolEmail: true };
-        }
-        return null;
-      };
-}
+export function emailValidator(control: AbstractControl): ValidationErrors | null {
+    const email = control.value;
+    const domain = '@wilder.school';
+    if (email && !email.endsWith(domain)) {
+      return { emailDomain: true };
+    }
+    return null;
+  }

@@ -17,7 +17,7 @@ export class FormValidatorQuete16Component {
     userName: ['', [Validators.required, Validators.minLength(3)]],
     credentials: this.fb.group({
       userMail: ['', [Validators.required, Validators.email, emailValidator]],
-    userPassword: ['', [
+      userPassword: ['', [
       Validators.required,
       this.passwordValidator]],
     }),
