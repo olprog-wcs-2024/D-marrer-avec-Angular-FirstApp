@@ -17,13 +17,14 @@ import { NasaService, ObjectfromNasa } from './services/nasa.service';
 import { UserTemplateFormQuete14Component } from './user-template-form-quete14/user-template-form-quete14.component';
 import { UserReactiveFormQuete15Component } from "./user-reactive-form-quete15/user-reactive-form-quete15.component";
 import { FormValidatorQuete16Component } from "./form-validator-quete16/form-validator-quete16.component";
+import { InterceptorQuete17Component } from './interceptor-quete17/interceptor-quete17.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent, CocktailListComponent, UserTemplateFormQuete14Component, UserReactiveFormQuete15Component, FormValidatorQuete16Component]
+    imports: [RouterOutlet, CommonModule, RouterLink, BlockComponent, UserProfileComponent, UserAdminComponent, MenuComponent, SignUpFormComponent, ReactiveFormComponent, DeveloperComponent, CreateOnomatopiaComponent, KittenFormComponent, KittenListComponent, AdoptedKittenListComponent, CocktailListComponent, UserTemplateFormQuete14Component, UserReactiveFormQuete15Component, FormValidatorQuete16Component, InterceptorQuete17Component]
 })
 export class AppComponent {
 
