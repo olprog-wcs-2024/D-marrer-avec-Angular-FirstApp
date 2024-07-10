@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-interceptor-quete17',
+  standalone: true,
+  imports: [HttpClientModule],
   templateUrl: './interceptor-quete17.component.html',
   styleUrls: ['./interceptor-quete17.component.css']
 })

@@ -40,8 +40,8 @@
     <div class="new-user-info" *ngIf="newUser">
       <h3>Nouveau utilisateur</h3>
       <p><strong>Nom d'utilisateur:</strong> {{ newUser.userName }}</p>
-      <p><strong>Email:</strong> {{ newUser.userMail }}</p>
-      <p><strong>Mot de passe:</strong> {{ newUser.userPassword }}</p>
+      <p><strong>Email:</strong> {{ newUser.userLog.userMail }}</p>
+      <p><strong>Mot de passe:</strong> {{ newUser.userLog.userPassword }}</p>
       <p>
         <strong>Adresse:</strong> {{ newUser.userAddress.street }},
         {{ newUser.userAddress.postalCode }}, {{ newUser.userAddress.city }}
